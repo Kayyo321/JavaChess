@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="396eb935-2491-420b-bbbc-2aaf23b55890" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/chess/engine/driver/taken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chess/engine/driver/dataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chess/engine/driver/history.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/king.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/king.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/rook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/core/board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/core/board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/core/move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/core/move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chess/engine/core/piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/core/piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/driver/table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/driver/table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -164,6 +157,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.chess.engine.core" />
       <recent name="com.chess.engine.board.driver" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.chess.engine.driver" />
     </key>
   </component>
   <component name="RunManager" selected="Application.javaChess">

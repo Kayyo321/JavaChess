@@ -60,27 +60,32 @@ public abstract class piece {
     public abstract piece movePiece(final move _m);
 
     public int getPieceVal() {
-        // FIXME: stub.
-        return 0;
+        return this.pt.getVal();
     }
 
     public enum pieceType {
-        pawn("P"),
-        knight("N"),
-        bishop("B"),
-        rook("R"),
-        queen("Q"),
-        king("K");
+        pawn("P", 100),
+        knight("N", 300),
+        bishop("B", 300),
+        rook("R", 500),
+        queen("Q", 900),
+        king("K", 10000);
 
-        private String pieceName;
+        private final String pieceName;
+        private final int val;
 
-        pieceType(final String _pieceName) {
+        pieceType(final String _pieceName, final int _val) {
             this.pieceName = _pieceName;
+            this.val = _val;
         }
 
         @Override
         public String toString() {
             return this.pieceName;
+        }
+
+        public int getVal() {
+            return this.val;
         }
     }
 }
