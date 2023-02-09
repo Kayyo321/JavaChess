@@ -1,7 +1,6 @@
 package com.chess.engine.driver;
 
 import com.chess.engine.abstractPieces.*;
-import com.chess.engine.core.board.abstractPieces.*;
 import com.chess.engine.core.board;
 import com.chess.engine.core.team;
 
