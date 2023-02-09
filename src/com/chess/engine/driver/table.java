@@ -95,13 +95,13 @@ public class table {
         openPGN.addActionListener(event -> System.out.println("Opening .PGN file..."));
         fileMenu.add(openPGN);
 
-        final JMenuItem openBoardXML = new JMenuItem("Set Chess Board To XML File...");
-        openBoardXML.addActionListener(event -> System.out.println("Opening .XML file..."));
-        fileMenu.add(openBoardXML);
+        final JMenuItem savePGN = new JMenuItem("Save PGN File...");
+        savePGN.addActionListener(event -> System.out.println("Saving .PGN file..."));
+        fileMenu.add(savePGN);
 
         final JMenuItem exit = new JMenuItem("Exit Java Chess...");
         exit.addActionListener(event -> {
-            System.out.println("Exiting Java Ches...");
+            System.out.println("Exiting Java Chess...");
             exit(0);
         });
         fileMenu.add(exit);
@@ -210,24 +210,16 @@ public class table {
                 }
 
                 @Override
-                public void mousePressed(MouseEvent e) {
-
-                }
+                public void mousePressed(MouseEvent e) {}
 
                 @Override
-                public void mouseReleased(MouseEvent e) {
-
-                }
+                public void mouseReleased(MouseEvent e) {}
 
                 @Override
-                public void mouseEntered(MouseEvent e) {
-
-                }
+                public void mouseEntered(MouseEvent e) {}
 
                 @Override
-                public void mouseExited(MouseEvent e) {
-
-                }
+                public void mouseExited(MouseEvent e) {}
             });
 
             validate();
