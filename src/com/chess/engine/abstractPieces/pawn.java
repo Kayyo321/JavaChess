@@ -68,8 +68,8 @@ public class pawn extends piece {
 
                 case 16:
                     if (this.firstMove
-                        && (board.secondRow[this.piecePos]  && this.pieceTeam == team.black)
-                        || (board.seventhRow[this.piecePos] && this.pieceTeam == team.white)) {
+                        && (board.seventhRank[this.piecePos]  && this.pieceTeam == team.black)
+                        || (board.secondRank[this.piecePos] && this.pieceTeam == team.white)) {
                         bhd = this.piecePos + (this.pieceTeam.getDir() * 8);
 
                         if (!_b.getTile(bhd).filled() && !_b.getTile(cdc).filled()) {

@@ -1,13 +1,12 @@
 package com.chess.engine.core;
 
 import com.chess.engine.abstractPieces.pawn;
+import com.chess.engine.abstractPieces.rook;
 
 public abstract class move {
     protected final board brd;
     protected final piece movedPiece;
     protected final int   destination;
-
-    public static nilMove cachedNilMove = new nilMove();
 
     private final int chachedHashCode;
 
@@ -138,6 +137,12 @@ public abstract class move {
         public pawnEnPassantAttackMove(final board _brd, final piece _movedPiece, final int _destination, final piece _attackedPiece) {
             super(_brd, _movedPiece, _destination, _attackedPiece);
         }
+    }
+
+    public static class pawnJump extends move {
+        public pawnJump(final board _brd, final piece _movedPiece, final int _destination) {
+            super(_brd, _movedPiece, _destination);
+        }
 
         @Override
         public board execute() {
@@ -162,38 +167,64 @@ public abstract class move {
         }
     }
 
-    public static class pawnJump extends move {
-        public pawnJump(final board _brd, final piece _movedPiece, final int _destination) {
-            super(_brd, _movedPiece, _destination);
-        }
-    }
-
     static abstract class castleMove extends move {
-        public castleMove(final board _brd, final piece _movedPiece, final int _destination) {
+        protected final rook castleRook;
+        protected final int  rookSrc;
+        protected final int  rookDest;
+
+        public castleMove(final board _brd, final piece _movedPiece, final int _destination, final rook _castleRook, final int _rookSrc, final int _rookDest) {
             super(_brd, _movedPiece, _destination);
+            this.castleRook = _castleRook;
+            this.rookSrc = _rookSrc;
+            this.rookDest = _rookDest;
+        }
+
+        public rook getCastleRook() { return this.castleRook; }
+
+        @Override
+        public boolean isCastlingMove() { return true; }
+
+        @Override
+        public board execute() {
+            final board.builder b = new board.builder();
+
+            for (final piece p: this.brd.plr().getActivePieces()) {
+                if (!this.movedPiece.equals(p) && !this.castleRook.equals(p)) {
+                    b.setPiece(p);
+                }
+            }
+
+            for (final piece p: this.brd.plr().getOpp().getActivePieces()) {
+                b.setPiece(p);
+            }
+
+            b.setPiece(this.movedPiece.movePiece(this));
+            b.setPiece(new rook(this.castleRook.getPos(), this.castleRook.getTeam()));
+            b.setMove(this.brd.plr().getOpp().getTeam());
+
+            return b.build();
         }
     }
 
-    public static class kingSideCastleMove extends move {
-        public kingSideCastleMove(final board _brd, final piece _movedPiece, final int _destination) {
-            super(_brd, _movedPiece, _destination);
-        }
-    }
-
-    public static class queenSideCastleMove extends move {
-        public queenSideCastleMove(final board _brd, final piece _movedPiece, final int _destination) {
-            super(_brd, _movedPiece, _destination);
-        }
-    }
-
-    public static class nilMove extends move {
-        public nilMove() {
-            super(null, null, -1);
+    public static class kingSideCastleMove extends castleMove {
+        public kingSideCastleMove(final board _brd, final piece _movedPiece, final int _destination, final rook _castleRook, final int _rookSrc, final int _rookDest) {
+            super(_brd, _movedPiece, _destination, _castleRook, _rookSrc, _rookDest);
         }
 
         @Override
-        public board execute() throws RuntimeException {
-            throw new RuntimeException("Cannot execute the nil move!");
+        public String toString() {
+            return "0-0";
+        }
+    }
+
+    public static class queenSideCastleMove extends castleMove {
+        public queenSideCastleMove(final board _brd, final piece _movedPiece, final int _destination, final rook _castleRook, final int _rookSrc, final int _rookDest) {
+            super(_brd, _movedPiece, _destination, _castleRook, _rookSrc, _rookDest);
+        }
+
+        @Override
+        public String toString() {
+            return "0-0-0";
         }
     }
 
@@ -209,7 +240,7 @@ public abstract class move {
                 }
             }
 
-            return cachedNilMove;
+            return null;
         }
     }
 }

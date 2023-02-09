@@ -13,7 +13,6 @@ public class moveTrans {
         this.ms = _ms;
     }
 
-    public moveStatus getStatus() {
-        return this.ms;
-    }
+    public moveStatus getStatus() { return this.ms; }
+    public board getTransBoard() { return this.transBoard; }
 }

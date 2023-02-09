@@ -10,8 +10,14 @@ import com.google.common.collect.Iterables;
 import java.util.*;
 
 public class board {
-    public static final boolean[] secondRow  = initRow(8);
-    public static final boolean[] seventhRow = initRow(48);
+    public static final boolean[] eighthRank  = initRow(0);
+    public static final boolean[] seventhRank = initRow(8);
+    public static final boolean[] sixthRank   = initRow(16);
+    public static final boolean[] fifthRank   = initRow(24);
+    public static final boolean[] fourthRank  = initRow(32);
+    public static final boolean[] thirdRank   = initRow(40);
+    public static final boolean[] secondRank  = initRow(48);
+    public static final boolean[] firstRank   = initRow(56);
 
     public static final boolean[] firstColumn   = initColumn(0);
     public static final boolean[] secondColumn  = initColumn(1);

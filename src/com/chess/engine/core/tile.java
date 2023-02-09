@@ -17,6 +17,8 @@ public abstract class tile {
         return _piece != null ? new filledTile(_tileNum, _piece) : emptyTiles.get(_tileNum);
     }
 
+    public int getTileCoord() { return this.tileNum; }
+
     // Initialize all possible empty tiles.
     private static Map<Integer, emptyTile> initTiles() {
         final Map<Integer, emptyTile> etp = new HashMap<>();

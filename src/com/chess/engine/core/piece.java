@@ -3,9 +3,10 @@ package com.chess.engine.core;
 import java.util.Collection;
 
 public abstract class piece {
+    public final boolean firstMove;
+
     protected final int piecePos;
     protected final team pieceTeam;
-    protected final boolean firstMove;
     protected final pieceType pt;
 
     private final int cachedHashCode;
@@ -61,7 +62,7 @@ public abstract class piece {
 
     public enum pieceType {
         pawn("P"),
-        knight("K"),
+        knight("N"),
         bishop("B"),
         rook("R"),
         queen("Q"),

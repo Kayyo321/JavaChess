@@ -3,6 +3,7 @@ package com.chess.engine.driver;
 import com.chess.engine.abstractPieces.king;
 import com.chess.engine.core.*;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,11 +22,11 @@ public abstract class player {
         if (this.plrK == null) {
             throw new RuntimeException("King was not established... Board initialized unsuccessfully...");
         }
-        this.legals = _legals;
+        this.legals = ImmutableList.copyOf(Iterables.concat(_legals, calcKingCastles(_legals, _oppLegals)));
         this.isInCheck = !player.calcAttacksOnTile(this.plrK.getPos(), _oppLegals).isEmpty();
     }
 
-    private static Collection<move> calcAttacksOnTile(final int _pos, final Collection<move> _moves) {
+    protected static Collection<move> calcAttacksOnTile(final int _pos, final Collection<move> _moves) {
         final List<move> attackMoves = new ArrayList<>();
 
         for (final move m: _moves) {
@@ -82,6 +83,8 @@ public abstract class player {
     public abstract team getTeam();
     public abstract player getOpp();
 
+    protected abstract Collection<move> calcKingCastles(final Collection<move> _playerLegals, final Collection<move> _oppLegals);
+
     protected boolean hasEscapeMoves() {
         for (final move m: this.legals) {
             final moveTrans transition = makeMove(m);
@@ -95,7 +98,7 @@ public abstract class player {
 
     private king establishKing() {
         for (final piece p : getActivePieces()) {
-            if (p.toString().equals(piece.pieceType.king.toString())) {
+            if (p.getPieceType().equals(piece.pieceType.king)) {
                 return (king) p;
             }
         }
