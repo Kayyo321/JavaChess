@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="396eb935-2491-420b-bbbc-2aaf23b55890" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guava_19_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chess/engine/driver/taken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaChess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaChess.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaChess/META-INF/JavaChess.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/driver/JavaChess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/driver/javaChess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/king.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/king.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/abstractPieces/rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/core/board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/core/board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/core/move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/core/move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chess/engine/core/piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/core/piece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chess/engine/driver/table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chess/engine/driver/table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,15 +151,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/sully/Documents/JavaChess/lib/guava-19.0.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sully/Documents/JavaChess/lib/guava-19.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.chess.engine.core" />
@@ -276,6 +281,17 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info active="true" anchor="right" content_ui="combo" id="Project" order="8" visible="true" weight="0.1189968" />
     </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/chess/engine/abstractPieces/bishop.java">

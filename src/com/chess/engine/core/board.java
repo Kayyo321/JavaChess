@@ -24,6 +24,10 @@ public class board {
     public static final boolean[] seventhColumn = initColumn(6);
     public static final boolean[] eightColumn   = initColumn(7);
 
+    public static final String[] algNot = initAlgNot();
+    public static final Map<String, Integer> ptc = initPtcMap();
+
+
     public static final int numTilesPerRow = 8;
     public static final int numTiles = 64;
 
@@ -46,6 +50,22 @@ public class board {
         this.white = new whitePlayer(this, whiteStdLegalMoves, blackStdLegalMoves);
         this.black = new blackPlayer(this, whiteStdLegalMoves, blackStdLegalMoves);
         this.curPlr = _b.nextMove.choose(this.white, this.black);
+    }
+
+    public static int getPosAtCoord(final int _dest) {
+        return 0; //algNot[_dest];
+    }
+
+    public static int getCoordAtPos(final String _pos) {
+        return 0; // ptc(_pos)
+    }
+
+    private static String[] initAlgNot() {
+        return null;
+    }
+
+    private static Map<String, Integer> initPtcMap() {
+        return null;
     }
 
     public player plr() {

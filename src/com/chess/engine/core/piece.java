@@ -11,11 +11,10 @@ public abstract class piece {
 
     private final int cachedHashCode;
 
-    public piece(final int _piecePos, final team _pieceTeam, final pieceType _pt) {
+    public piece(final int _piecePos, final team _pieceTeam, final pieceType _pt, final boolean _firstMove) {
         this.piecePos = _piecePos;
         this.pieceTeam = _pieceTeam;
-        // TODO: more work here!
-        this.firstMove = false;
+        this.firstMove = _firstMove;
         this.pt = _pt;
 
         int result = this.pt.hashCode();
@@ -59,6 +58,11 @@ public abstract class piece {
     }
 
     public abstract piece movePiece(final move _m);
+
+    public int getPieceVal() {
+        // FIXME: stub.
+        return 0;
+    }
 
     public enum pieceType {
         pawn("P"),

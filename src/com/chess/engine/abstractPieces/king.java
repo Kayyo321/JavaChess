@@ -11,7 +11,11 @@ public class king extends piece {
     private final static int[] candidateMoveNum = {-9, -8, -7, -1, 1, 7, 8, 9};
 
     public king(final int _piecePos, final team _pieceTeam) {
-        super(_piecePos, _pieceTeam, piece.pieceType.king);
+        super(_piecePos, _pieceTeam, piece.pieceType.king, true);
+    }
+
+    public king(final int _piecePos, final team _pieceTeam, final boolean _firstMove) {
+        super(_piecePos, _pieceTeam, piece.pieceType.rook, _firstMove);
     }
 
     @Override

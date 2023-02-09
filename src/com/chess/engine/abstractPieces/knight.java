@@ -11,7 +11,11 @@ public class knight extends piece {
     private final static int[] candidateMoveNum = {-17, -15, -10, -6, 6, 10, 15, 17};
 
     public knight(final int _pieceNum, final team _pieceTeam) {
-        super(_pieceNum, _pieceTeam, piece.pieceType.knight);
+        super(_pieceNum, _pieceTeam, piece.pieceType.knight, true);
+    }
+
+    public knight(final int _piecePos, final team _pieceTeam, final boolean _firstMove) {
+        super(_piecePos, _pieceTeam, piece.pieceType.rook, _firstMove);
     }
 
     @Override

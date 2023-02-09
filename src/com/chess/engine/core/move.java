@@ -7,25 +7,39 @@ public abstract class move {
     protected final board brd;
     protected final piece movedPiece;
     protected final int   destination;
+    protected final boolean firstMove;
 
-    private final int chachedHashCode;
+    private final int cachedHashCode;
 
     private move(final board _brd, final piece _movedPiece, final int _destination) {
         this.brd = _brd;
         this.movedPiece = _movedPiece;
         this.destination = _destination;
 
+        this.firstMove = this.movedPiece.firstMove;
+
         final int prime = 31;
         int result = 1;
-        //result = prime * result + this.movedPiece.getPos();
         result = prime * result + this.destination;
         result = prime * result + this.movedPiece.hashCode();
-        chachedHashCode = result;
+        result = prime * result + this.movedPiece.getPos();
+        this.cachedHashCode = result;
+    }
+
+    private move(final board _brd, final int _destination) {
+        this.brd = _brd;
+        this.movedPiece = null;
+        this.destination = _destination;
+        this.firstMove = false;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + this.destination;
+        this.cachedHashCode = result;
     }
 
     @Override
     public int hashCode() {
-        return this.chachedHashCode;
+        return this.cachedHashCode;
     }
 
     @Override
@@ -38,7 +52,7 @@ public abstract class move {
 
         final move otherMove = (move) other;
 
-        return this.getDest() == otherMove.getDest() && this.getMovedPiece() == otherMove.getMovedPiece();
+        return this.getDest() == otherMove.getDest() && this.getMovedPiece() == otherMove.getMovedPiece() && this.getSrc() == otherMove.getSrc();
     }
 
     public int getSrc() {
@@ -87,6 +101,16 @@ public abstract class move {
     public static final class majorMove extends move {
         public majorMove(final board _brd, final piece _movedPiece, final int _destination) {
             super(_brd, _movedPiece, _destination);
+        }
+
+        @Override
+        public boolean equals(final Object other) {
+            return this == other || other instanceof majorMove && super.equals(other);
+        }
+
+        @Override
+        public String toString() {
+            return this.movedPiece.getPieceType().toString() + board.getPosAtCoord(this.destination);
         }
     }
 

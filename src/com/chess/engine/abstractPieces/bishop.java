@@ -11,7 +11,11 @@ public class bishop extends piece {
     private final static int[] candidateVecNum = {-9, -7, 7, 9};
 
     public bishop(final int _piecePos, final team _pieceTeam) {
-        super(_piecePos, _pieceTeam, piece.pieceType.bishop);
+        super(_piecePos, _pieceTeam, piece.pieceType.bishop, true);
+    }
+
+    public bishop(final int _piecePos, final team _pieceTeam, final boolean _firstMove) {
+        super(_piecePos, _pieceTeam, piece.pieceType.rook, _firstMove);
     }
 
     @Override

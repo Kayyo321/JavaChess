@@ -2,6 +2,7 @@ package com.chess.engine.driver;
 
 import com.chess.engine.abstractPieces.*;
 import com.chess.engine.core.*;
+import com.google.common.collect.ImmutableList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -156,6 +157,38 @@ public class table {
             }
             validate();
             repaint();
+        }
+    }
+
+    public static class moveLog {
+        private final List<move> moves;
+
+        moveLog() {
+            this.moves = new ArrayList<>();
+        }
+
+        public List<move> moves() {
+            return ImmutableList.copyOf(moves);
+        }
+
+        public void add(final move _m) {
+            this.moves.add(_m);
+        }
+
+        public int len() {
+            return this.moves.size();
+        }
+
+        public void clr() {
+            this.moves.clear();
+        }
+
+        public move remove(final int index) {
+            return this.moves.remove(index);
+        }
+
+        public boolean remove(final move _m) {
+            return this.moves.remove(_m);
         }
     }
 

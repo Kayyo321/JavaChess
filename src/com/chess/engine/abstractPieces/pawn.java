@@ -14,7 +14,11 @@ public class pawn extends piece {
     private final static int[] candidateMoveNum = {7, 8, 9, 16};
 
     public pawn(final int _piecePos, final team _pieceTeam) {
-        super(_piecePos, _pieceTeam, piece.pieceType.pawn);
+        super(_piecePos, _pieceTeam, piece.pieceType.pawn, true);
+    }
+
+    public pawn(final int _piecePos, final team _pieceTeam, final boolean _firstMove) {
+        super(_piecePos, _pieceTeam, piece.pieceType.rook, _firstMove);
     }
 
     @Override
@@ -39,8 +43,7 @@ public class pawn extends piece {
                         if (_b.getTile(cdc).filled()) {
                             poc = _b.getTile(cdc).get();
                             if (this.pieceTeam != poc.getTeam()) {
-                                // TODO: more to do here.
-                                legals.add(new move.majorMove(_b, this, cdc));
+                                legals.add(new move.pawnEnPassantAttackMove(_b, this, cdc, poc));
                             }
                         }
                     }
@@ -59,8 +62,7 @@ public class pawn extends piece {
                         if (_b.getTile(cdc).filled()) {
                             poc = _b.getTile(cdc).get();
                             if (this.pieceTeam != poc.getTeam()) {
-                                // TODO: more to do here.
-                                legals.add(new move.majorMove(_b, this, cdc));
+                                legals.add(new move.pawnEnPassantAttackMove(_b, this, cdc, poc));
                             }
                         }
                     }
@@ -73,7 +75,7 @@ public class pawn extends piece {
                         bhd = this.piecePos + (this.pieceTeam.getDir() * 8);
 
                         if (!_b.getTile(bhd).filled() && !_b.getTile(cdc).filled()) {
-                            legals.add(new move.majorMove(_b, this, cdc));
+                            legals.add(new move.pawnJump(_b, this, cdc));
                         }
                     }
                     break;

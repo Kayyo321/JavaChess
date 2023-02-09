@@ -11,7 +11,11 @@ public class rook extends piece {
     private final static int[] candidateVecNum = {-8, -1, 1, 8};
 
     public rook(final int _piecePos, final team _pieceTeam) {
-        super(_piecePos, _pieceTeam, piece.pieceType.rook);
+        super(_piecePos, _pieceTeam, piece.pieceType.rook, true);
+    }
+
+    public rook(final int _piecePos, final team _pieceTeam, final boolean _firstMove) {
+        super(_piecePos, _pieceTeam, piece.pieceType.rook, _firstMove);
     }
 
     @Override
